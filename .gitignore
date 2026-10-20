@@ -1,0 +1,21 @@
+# .NET build output
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Node and Vite output
+**/node_modules/
+**/dist/
+**/.vite/
+**/coverage/
+
+# Local secrets and configuration
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local dependency caches
+.dotnet/
+.nuget/
+.pnpm-store/
