@@ -28,6 +28,11 @@ button { cursor: pointer; }
 .nav-link:hover, .nav-link.active { color: var(--primary); }
 .header-action { background: #f2f0ff; color: var(--primary); border-radius: 999px; padding: 12px 17px; font-size: 12px; font-weight: 700; }
 .header-action span { margin-left: 8px; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.header-login, .header-account { display: inline-flex; align-items: center; gap: 8px; color: #4e43cd; font-size: 12px; font-weight: 700; }
+.header-account { color: #27334d; }
+.header-avatar, .profile-avatar { display: inline-grid; flex: 0 0 auto; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #e8e5ff; color: #5143d5; font-size: 12px; font-weight: 800; }
+.header-logout { padding: 5px; border: 0; background: transparent; color: #78839a; font-size: 10px; }
 .hero { position: relative; min-height: 348px; overflow: hidden; color: white; background: linear-gradient(112deg, #6530c8 0%, #4d36d8 50%, #293fd6 100%); }
 .hero-content { position: relative; z-index: 2; width: min(1160px, calc(100% - 48px)); margin: auto; padding: 54px 0 56px; }
 .hero-eyebrow, .section-kicker { display: flex; align-items: center; gap: 9px; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
@@ -150,6 +155,30 @@ kbd { padding: 4px 6px; border: 1px solid #e5e8f0; border-radius: 6px; color: #8
 .evidence-source:hover { text-decoration: underline; }
 .site-footer { padding: 18px 24px 26px; color: #8791a5; font-size: 10px; text-align: center; }
 .site-footer span { padding: 0 5px; color: #4c40d6; }
+.auth-shell { width: min(580px, calc(100% - 40px)); min-height: calc(100vh - 135px); margin: auto; padding: 56px 0; }
+.auth-card { padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: 0 12px 38px rgba(38,48,83,.06); }
+.auth-card .section-kicker { color: #6659d9; }
+.auth-card h1 { margin: 13px 0 7px; font-size: 30px; letter-spacing: -.04em; }
+.auth-intro { margin: 0 0 20px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.auth-demo-notice { margin: 18px 0; padding: 12px 14px; border: 1px solid #f0dfa8; border-radius: 11px; background: #fff9e9; color: #715a20; font-size: 11px; line-height: 1.55; }
+.auth-form { display: flex; flex-direction: column; gap: 15px; margin-top: 22px; }
+.auth-form label { display: flex; flex-direction: column; gap: 7px; color: #47536c; font-size: 12px; font-weight: 700; }
+.auth-form input { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); outline: none; font-size: 13px; }
+.auth-form input:focus { border-color: #9c94f0; box-shadow: 0 0 0 3px rgba(77,63,224,.08); }
+.auth-submit { min-height: 44px; margin-top: 2px; font-size: 12px; }
+.auth-submit:disabled { cursor: wait; opacity: .7; }
+.auth-error { margin: 0; color: #b73535; font-size: 12px; }
+.auth-switch { margin: 20px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+.auth-switch a { color: var(--primary); font-weight: 700; }
+.profile-email { display: flex; align-items: center; gap: 13px; margin: 23px 0; padding: 15px; border-radius: 13px; background: #f7f7fc; }
+.profile-avatar { width: 44px; height: 44px; font-size: 17px; }
+.profile-email div { display: flex; flex-direction: column; gap: 5px; }
+.profile-email strong { font-size: 14px; }
+.profile-email div span { color: var(--muted); font-size: 11px; }
+.profile-message { margin: 0; color: #087e6e; font-size: 12px; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.profile-demo-note { margin: 23px 0 10px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.profile-logout { padding: 8px 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 @media (max-width: 900px) {
@@ -165,6 +194,10 @@ kbd { padding: 4px 6px; border: 1px solid #e5e8f0; border-radius: 6px; color: #8
   .brand img { width: 38px; height: 38px; border-radius: 11px; }
   .main-nav { gap: 10px; font-size: 10px; }
   .main-nav a:last-child { display: none; }
+  .header-actions { gap: 8px; }
+  .header-actions .header-action { display: none; }
+  .header-login, .header-account { font-size: 10px; }
+  .header-logout { display: none; }
   .header-action { padding: 10px 11px; font-size: 9px; }
   .header-action span { margin-left: 3px; }
   .hero { min-height: 300px; border-radius: 0 0 24px 24px; }
@@ -209,4 +242,8 @@ kbd { padding: 4px 6px; border: 1px solid #e5e8f0; border-radius: 6px; color: #8
   .deadline-card-copy { flex-basis: calc(100% - 20px); }
   .deadline-status { margin-right: auto; font-size: 10px; }
   .personal-actions .button { flex: 1; font-size: 9px; }
+  .auth-shell { width: calc(100% - 24px); min-height: calc(100vh - 110px); padding: 30px 0; }
+  .auth-card { padding: 23px 18px; border-radius: 16px; }
+  .auth-card h1 { font-size: 25px; }
+  .profile-links .button { flex: 1; font-size: 9px; }
 }
