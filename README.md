@@ -23,7 +23,7 @@ pnpm install
 pnpm dev -- --port 5173
 ```
 
-Откройте `http://localhost:5173/opportunities`. Frontend обращается к `http://localhost:5184/api`; адрес можно переопределить переменной `VITE_API_BASE_URL` (см. `frontend/.env.example`).
+Откройте адрес, который напечатает Vite: обычно `http://localhost:5173/opportunities`; если порт 5173 занят, Vite выберет следующий свободный (например, `5174`). API разрешает оба локальных frontend-порта и доступен на `http://localhost:5184/api`; адрес можно переопределить переменной `VITE_API_BASE_URL` (см. `frontend/.env.example`).
 
 ## Демо-аккаунт
 
